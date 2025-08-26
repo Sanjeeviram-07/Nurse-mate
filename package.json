@@ -1,0 +1,53 @@
+{
+    "name": "nursemate",
+    "version": "1.0.0",
+    "description": "All-in-one companion app for nursing students",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "setup-env": "node setup-env.js",
+        "setup-invites": "node setup-admin-invites.js",
+        "migrate-users": "node migrate-existing-users.js",
+        "deploy-rules": "firebase deploy --only firestore:rules",
+        "deploy-functions": "firebase deploy --only functions",
+        "deploy-all": "firebase deploy",
+        "email-server": "node server.js"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.24.1",
+        "@mlc-ai/web-llm": "^0.2.79",
+        "clsx": "^2.1.1",
+        "cors": "^2.8.5",
+        "dotenv": "^17.2.1",
+        "express": "^4.18.2",
+        "firebase": "^10.12.2",
+        "framer-motion": "^12.23.12",
+        "html2canvas": "^1.4.1",
+        "jspdf": "^3.0.1",
+        "lucide-react": "^0.263.1",
+        "node-fetch": "^2.6.7",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-firebase-hooks": "^5.1.1",
+        "react-router-dom": "^6.30.1",
+        "react-scripts": "^5.0.1"
+    },
+    "devDependencies": {
+        "tailwindcss": "^2.2.19"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}

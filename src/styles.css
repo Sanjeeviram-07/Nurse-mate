@@ -1,0 +1,801 @@
+:root {
+  --orange-500: #FF6200;
+  --orange-300: #FF9A00;
+  --gray-800: #333333;
+  --white: #FFFFFF;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+}
+
+/* Landing page background gradient - ensures proper application */
+.landing-page {
+  background: linear-gradient(to bottom right, #ea580c, #fb923c, #fed7aa, #ffffff) !important;
+  min-height: 100vh !important;
+}
+
+/* Enhanced sticky navbar with glossy effect */
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 98, 0, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  z-index: 50 !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Ensure page content doesn't get hidden behind navbar */
+.page-container {
+  padding-top: 1rem !important;
+}
+
+/* Unified button styles */
+.btn-orange {
+  background: linear-gradient(to right, #ff6200, #ff9a00);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(to right, #fdba74, #fed7aa) !important;
+  color: #ea580c !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-orange-outline {
+  border: 2px solid #ff6200;
+  color: #ff6200;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.btn-orange-outline:hover {
+  background: linear-gradient(to right, #fed7aa, #fde68a) !important;
+  color: #ea580c !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Warm orange button styles for the new gradient theme */
+.btn-warm-orange {
+  background: linear-gradient(to right, #ea580c, #fb923c);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-warm-orange::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #fdba74, #fed7aa);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-warm-orange:hover {
+  color: #ea580c !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-warm-orange:hover::before {
+  left: 0;
+}
+
+.btn-warm-outline {
+  border: 2px solid #ea580c;
+  color: #ea580c;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-warm-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #fed7aa, #fde68a);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-warm-outline:hover {
+  color: #ea580c !important;
+  border-color: #ea580c !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  transform: translateY(-2px) scale(1.02) !important;
+}
+
+.btn-warm-outline:hover::before {
+  left: 0;
+}
+
+/* Section gradient for consistent backgrounds */
+.section-gradient {
+  background: linear-gradient(to bottom, white, #fff7ed, #fed7aa);
+}
+
+/* Landing page specific gradient */
+.landing-bg {
+  background: linear-gradient(to bottom, white, #fff7ed, #fed7aa);
+}
+
+/* Enhanced navbar with glossy effect - REMOVED to prevent conflicts */
+
+/* Navbar Button Styles with Glossy Effects */
+.nav-button {
+  position: relative;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.nav-button:hover {
+  background: rgba(255, 98, 0, 0.05);
+  transform: translateY(-1px);
+  color: #ea580c !important;
+}
+
+.nav-button:hover::before {
+  left: 100%;
+}
+
+.nav-button-active {
+  background: rgba(255, 98, 0, 0.08);
+  color: #ea580c !important;
+}
+
+/* Authentication Button Styles */
+.nav-auth-button {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #ea580c, #fb923c);
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.nav-auth-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+  z-index: 1;
+}
+
+.nav-auth-button:hover {
+  background: linear-gradient(135deg, #dc2626, #ea580c);
+  transform: translateY(-2px);
+}
+
+.nav-auth-button:hover::before {
+  left: 100%;
+}
+
+.nav-auth-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile Menu Button Styles */
+.nav-mobile-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-mobile-button:hover {
+  background: rgba(255, 98, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Mobile Menu Link Styles */
+.nav-mobile-link {
+  position: relative;
+  background: transparent;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.nav-mobile-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.4s ease;
+  z-index: 1;
+}
+
+.nav-mobile-link:hover {
+  background: rgba(255, 98, 0, 0.05);
+  transform: translateX(4px);
+}
+
+.nav-mobile-link:hover::before {
+  left: 100%;
+}
+
+.nav-mobile-link-active {
+  background: rgba(255, 98, 0, 0.08);
+  color: #ea580c !important;
+}
+
+.nav-link {
+  color: #333;
+  transition: color 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+}
+
+.nav-link:hover {
+  color: #ff6200;
+}
+
+.nav-link-active {
+  color: #ff6200;
+  font-weight: 600;
+  background-color: #fff7ed;
+}
+
+/* Page containers with consistent styling */
+.page-container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced glossy blur cards */
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 98, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 98, 0, 0.3);
+}
+
+.card-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Form elements with theme consistency */
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #ff6200;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 98, 0, 0.5);
+}
+
+.form-select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  border-color: #ff6200;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 98, 0, 0.5);
+}
+
+/* Loading spinner with theme colors */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  border-bottom: 2px solid #2563eb;
+}
+
+/* Enhanced animation classes for landing page - CSS fallback for Framer Motion */
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Line clamp utilities for job descriptions */
+/* Enhanced cross-browser line-clamp support */
+
+.line-clamp-2 {
+  /* Modern line-clamp support (WebKit browsers) */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  
+  /* Standard CSS fallbacks */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  /* Fallback for browsers that don't support line-clamp */
+  max-height: 2.4em; /* Approximately 2 lines of text */
+  
+  /* Additional fallback for older browsers */
+  line-height: 1.2;
+  word-wrap: break-word;
+  
+  /* Firefox fallback */
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  
+  /* IE fallback */
+  display: block;
+}
+
+.line-clamp-3 {
+  /* Modern line-clamp support (WebKit browsers) */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  
+  /* Standard CSS fallbacks */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  /* Fallback for browsers that don't support line-clamp */
+  max-height: 3.6em; /* Approximately 3 lines of text */
+  
+  /* Additional fallback for older browsers */
+  line-height: 1.2;
+  word-wrap: break-word;
+  
+  /* Firefox fallback */
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  
+  /* IE fallback */
+  display: block;
+}
+
+/* Route transition loader overlay */
+.route-loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(1200px 800px at 50% -20%, rgba(255, 244, 231, 0.85), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 1;
+  animation: routeLoaderFadeIn 180ms ease-out forwards;
+}
+
+.route-loader-overlay--fade-out {
+  animation: routeLoaderFadeOut 220ms ease-in forwards;
+}
+
+@keyframes routeLoaderFadeIn {
+  from { opacity: 0 } to { opacity: 1 }
+}
+
+@keyframes routeLoaderFadeOut {
+  from { opacity: 1 } to { opacity: 0 }
+}
+
+/* Medical symbol styles */
+.medical-symbol {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 96px;
+  height: 96px;
+  filter: drop-shadow(0 6px 16px rgba(234, 88, 12, 0.25));
+}
+
+.medical-symbol svg {
+  overflow: visible;
+}
+
+.symbol-glow {
+  fill: rgba(59, 130, 246, 0.10);
+  transform-origin: center;
+  animation: glowPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { transform: scale(1); opacity: 0.7 }
+  50% { transform: scale(1.06); opacity: 1 }
+}
+
+.symbol-cross rect {
+  fill: #2563eb;
+}
+
+.symbol-pulse-line {
+  fill: none;
+  stroke: #60a5fa;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 4 6;
+  animation: dashMove 1.2s linear infinite;
+}
+
+@keyframes dashMove {
+  to { stroke-dashoffset: -20; }
+}
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Glossy translucent navbar pill */
+.navbar-pill {
+  background: rgba(15, 23, 42, 0.5); /* slate-900 at 50% */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: background 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle glossy sheen */
+.navbar-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04) 40%, rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
+/* smooth blue hover transition */
+.navbar-pill:hover {
+  background: rgba(15, 23, 42, 0.55);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* Individual nav link pill with blue glow on hover/active */
+.nav-link-pill {
+  padding: 0.375rem 0.75rem; /* px-3 py-1.5 */
+  border-radius: 9999px;
+  transition: color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.nav-link-pill:hover {
+  background: rgba(59, 130, 246, 0.18); /* blue-500/18 */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25) inset, 0 6px 16px rgba(30, 64, 175, 0.25);
+}
+
+.nav-link-pill--active {
+  background: rgba(59, 130, 246, 0.28);
+  color: #ffffff !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.35) inset, 0 6px 18px rgba(30, 64, 175, 0.3);
+}
+
+/* Safe top spacing to avoid overlap with fixed navbar on small screens */
+@media (max-width: 640px) {
+  body { padding-top: 4.5rem; }
+}
+
+/* Custom scrollbar styles for chatbot */
+.chatbot-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f3f4f6;
+}
+
+.chatbot-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot-scrollbar::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 3px;
+}
+
+.chatbot-scrollbar::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.chatbot-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Enhanced message bubble styles for better readability */
+.message-bubble {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+.message-bubble p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for the entire app */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Ensure proper text wrapping in chat messages */
+.chat-message-content {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Chatbot Animation Classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Smooth button transitions */
+.chatbot-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chatbot-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chatbot-button:active {
+  transform: translateY(0) scale(0.95);
+}
+
+/* Chat window entrance animation */
+.chat-window-enter {
+  animation: chatWindowEnter 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.chat-window-exit {
+  animation: chatWindowExit 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes chatWindowEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes chatWindowExit {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+}
+
+/* Message bubble animations */
+.message-bubble {
+  transition: all 0.2s ease-out;
+}
+
+.message-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input field focus animation */
+.chat-input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Scroll button animation */
+.scroll-button-enter {
+  animation: scrollButtonEnter 0.3s ease-out forwards;
+}
+
+.scroll-button-exit {
+  animation: scrollButtonExit 0.3s ease-out forwards;
+}
+
+@keyframes scrollButtonEnter {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes scrollButtonExit {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+}
+
+/* Enhanced Chatbot Button Styles */
+.chatbot-toggle-button {
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3), 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.chatbot-toggle-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.4), 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.chatbot-toggle-button:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chatbot-toggle-button:focus {
+  outline: none;
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3), 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
